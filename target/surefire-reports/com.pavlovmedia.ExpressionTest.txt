@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.pavlovmedia.ExpressionTest
 -------------------------------------------------------------------------------
-Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.025 sec - in com.pavlovmedia.ExpressionTest
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.992 sec - in com.pavlovmedia.ExpressionTest

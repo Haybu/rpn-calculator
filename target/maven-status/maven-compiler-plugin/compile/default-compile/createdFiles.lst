@@ -11,6 +11,7 @@ com/pavlovmedia/api/computation/Chain.class
 com/pavlovmedia/driver/Prompt.class
 com/pavlovmedia/api/parser/Expression.class
 com/pavlovmedia/impl/computation/AddChain.class
+com/pavlovmedia/impl/computation/EndChain.class
 com/pavlovmedia/impl/computation/SinChain.class
 com/pavlovmedia/Application.class
 com/pavlovmedia/impl/computation/SubtractChain.class

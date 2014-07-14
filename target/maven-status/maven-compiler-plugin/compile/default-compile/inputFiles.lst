@@ -5,6 +5,7 @@
 /Users/hmohamed/gitworkspace/demo/rpn-calculator/src/main/java/com/pavlovmedia/impl/computation/SinChain.java
 /Users/hmohamed/gitworkspace/demo/rpn-calculator/src/main/java/com/pavlovmedia/impl/computation/DivideChain.java
 /Users/hmohamed/gitworkspace/demo/rpn-calculator/src/main/java/com/pavlovmedia/impl/computation/StartChain.java
+/Users/hmohamed/gitworkspace/demo/rpn-calculator/src/main/java/com/pavlovmedia/impl/computation/EndChain.java
 /Users/hmohamed/gitworkspace/demo/rpn-calculator/src/main/java/com/pavlovmedia/api/parser/Expression.java
 /Users/hmohamed/gitworkspace/demo/rpn-calculator/src/main/java/com/pavlovmedia/impl/computation/SubtractChain.java
 /Users/hmohamed/gitworkspace/demo/rpn-calculator/src/main/java/com/pavlovmedia/impl/computation/AddChain.java

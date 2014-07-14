@@ -23,24 +23,6 @@ import java.util.regex.Pattern;
 @ComponentScan
 public class Application
 {
-    /**
-    public static void main(String[] args) throws Exception
-    {
-
-        SpringApplication app = new SpringApplication(Application.class);
-        app.setShowBanner(false);
-        ApplicationContext context = app.run(args);
-
-        String expValue = "* 5 4 2 + *";
-
-        Calculator calculator = (Calculator) context.getBean("calculator");
-        double result = calculator.evaluate(expValue);
-
-        System.out.println("operation result = " + result);
-
-    }
-     */
-
     public static void main(String[] args) {
 
         SpringApplication app = new SpringApplication(Application.class);
@@ -64,6 +46,8 @@ public class Application
 
                 if (result != null) {
                     System.out.println("\nexpression is evaluated to a value = " + result.doubleValue());
+                } else {
+                    System.out.println("\nPlease review the entered expression format");
                 }
             }
             catch (Exception e) {

@@ -44,7 +44,7 @@ public class PowerChain implements Chain {
     @Override
     public int getNumberOfOperands(Token operator) {
         if (isValidOperation((String)operator.getTokenContent())) {
-            return 1;
+            return 2;
         } else {
             return nextChain.getNumberOfOperands(operator);
         }

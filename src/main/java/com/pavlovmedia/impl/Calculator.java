@@ -27,6 +27,10 @@ public class Calculator implements InitializingBean{
     Chain start;
 
     @Autowired
+    @Qualifier("end")
+    Chain end;
+
+    @Autowired
     @Qualifier("addition")
     Chain addition;
 
@@ -64,6 +68,7 @@ public class Calculator implements InitializingBean{
         division.setNextChain(power);
         power.setNextChain(cosine);
         cosine.setNextChain(sine);
+        sine.setNextChain(end);
     }
 
     private Token compute (Operation operation) {
@@ -110,16 +115,10 @@ public class Calculator implements InitializingBean{
         // after the loop is done, there should be no operators left, and only one result in the operand stack
        if (isValidEndOfComputation(expression)) {
            result = (MathToken) expression.getOperandStack().pop();
-           Double value = (Double) result.getTokenContent();
-           return value;
-       } else {
-           int operandStackSize = expression.getOperandStack().size();
-           int operatorStackSize = expression.getOperatorQueue().size();
-           String msg = "Operand Stack Size left = " + operandStackSize +
-                   "\nOperator Stack size left = " + operatorStackSize;
-           System.out.println("Error in computation, stacks are not computed correctly\n" + msg);
-           return null;
+           return (Double) result.getTokenContent();
        }
+
+        return null;
     }
 
     private boolean isValidEndOfComputation(Expression expression) {
