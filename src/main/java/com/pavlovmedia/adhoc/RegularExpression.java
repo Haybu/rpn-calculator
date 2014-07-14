@@ -1,14 +1,17 @@
-package com.pavlovmedia.driver;
+package com.pavlovmedia.adhoc;
 
 /**
  * Created by hmohamed on 7/12/14.
+ *
+ * for trials only: Trying out regular expression
+ * not in use in the calculator code.
  */
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
-public class Prompt {
+public class RegularExpression {
 
     public static void main(String[] args) {
 

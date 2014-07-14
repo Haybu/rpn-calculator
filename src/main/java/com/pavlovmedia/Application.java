@@ -15,7 +15,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * Hello world!
+ * RPN Calculator application
  *
  */
 @Configuration

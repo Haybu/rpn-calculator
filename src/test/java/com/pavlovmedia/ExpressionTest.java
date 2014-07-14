@@ -10,7 +10,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.util.Assert;
 
 /**
- * Integration test for calculator Application.
+ * Integration test for RPN calculator Application.
  */
 
 @Profile("test")
