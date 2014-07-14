@@ -9,6 +9,8 @@ import org.springframework.util.Assert;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Created by hmohamed on 7/12/14.
@@ -34,8 +36,17 @@ public class MathExpression implements Expression {
 
     @Override
     public boolean isValid() {
-        return valid && (!operandStack.empty() && !operatorQueue.isEmpty()
-                && (operandStack.size() == operatorQueue.size() + 1));
+        String regex = "^[\\d\\s]+[\\D\\s]+$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(getExpression());
+        boolean isMatch = matcher.matches();
+
+        return valid
+                &&
+                (!operandStack.empty() && !operatorQueue.isEmpty())
+                &&
+                isMatch
+                ;
     }
 
     public String getExpression() {

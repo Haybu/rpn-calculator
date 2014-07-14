@@ -66,7 +66,7 @@ public class Calculator implements InitializingBean{
         cosine.setNextChain(sine);
     }
 
-    public Token compute (Operation operation) {
+    private Token compute (Operation operation) {
         return start.compute(operation);
     }
 
@@ -77,14 +77,14 @@ public class Calculator implements InitializingBean{
         expression.configure();
 
         if (expression.isValid()) {
-            return new Double(process());
+            return process();
         } else {
             System.out.print("\nInvalid expression: " + expValue + "\n");
             return null;
         }
     }
 
-    private double process() {
+    private Double process() {
 
         Token operator, firstOperand, secondOperand, result;
         Operation operation;
@@ -94,6 +94,9 @@ public class Calculator implements InitializingBean{
             int numberOfOperands = start.getNumberOfOperands(operator);
             firstOperand = (MathToken) expression.getOperandStack().pop();
             if (numberOfOperands > 1) {
+                if (expression.getOperandStack().size() == 0) {
+                    return null;
+                }
                 secondOperand = (MathToken) expression.getOperandStack().pop();
             }
 
@@ -108,13 +111,14 @@ public class Calculator implements InitializingBean{
        if (isValidEndOfComputation(expression)) {
            result = (MathToken) expression.getOperandStack().pop();
            Double value = (Double) result.getTokenContent();
-           return value.doubleValue();
+           return value;
        } else {
            int operandStackSize = expression.getOperandStack().size();
            int operatorStackSize = expression.getOperatorQueue().size();
            String msg = "Operand Stack Size left = " + operandStackSize +
                    "\nOperator Stack size left = " + operatorStackSize;
-           throw new RuntimeException("Error in computation, stacks are not computed correctly\n" + msg);
+           System.out.println("Error in computation, stacks are not computed correctly\n" + msg);
+           return null;
        }
     }
 
